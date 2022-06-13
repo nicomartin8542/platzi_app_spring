@@ -24,4 +24,17 @@ public class ProductoRepository {
         return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 
+
+    //Metodos de crudRepository
+    public Optional<Producto> getByIdProducto(int producto) {
+        return productoCrudRepository.findById(producto);
+    }
+
+    public Producto save (Producto producto) {
+        return productoCrudRepository.save(producto);
+    }
+
+    public void delete (int idProducto) {
+        productoCrudRepository.deleteById(idProducto);
+    }
 }
