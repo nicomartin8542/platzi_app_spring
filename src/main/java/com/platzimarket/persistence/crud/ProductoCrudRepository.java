@@ -12,7 +12,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     //@Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true)
 
     //Query methods
-    //Son consultas custom que hacemos ademas de las que nos da el data repository de spgin boot
+    //Son consultas custom que hacemos ademas de las que nos da el data repository de spring boot
     List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int categoriaStock, boolean estado);
 

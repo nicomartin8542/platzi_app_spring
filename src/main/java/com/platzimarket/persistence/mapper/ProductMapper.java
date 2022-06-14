@@ -6,7 +6,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+import java.util.List;
+
+@Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {
 
     @Mappings({
@@ -20,6 +22,7 @@ public interface ProductMapper {
 
     })
     Product toProduct(Producto producto);
+    List<Product> toProducts (List<Producto> productos);
 
     @InheritInverseConfiguration
     @Mapping(target = "cantidadStock", ignore = true)
